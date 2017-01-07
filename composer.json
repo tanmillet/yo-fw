@@ -1,0 +1,16 @@
+{
+    "name": "yodiy/yodiy",
+    "description": "The php Framework.",
+    "keywords": ["framework", "php"],
+    "type": "project",
+    "require": {
+        "php": ">=5.3.0",
+        "filp/whoops": "*"
+    },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
