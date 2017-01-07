@@ -1,5 +1,6 @@
 <?php
 namespace core;
+use core\lib\Log;
 use core\lib\Route;
 
 /**
@@ -16,8 +17,10 @@ class yodiy{
 
     static public function run()
     {
+        Log::init(); //启动日志文件
+        Log::log('adsfasf');
         $route = new Route();
-        $className = strtoupper($route->ctrl);
+        $className = ucfirst($route->ctrl);
         $action = $route->action;
         $ctrlFile = APP. '/ctrl/' . $className . 'Ctrl.php';
         $ctrlClass = '\\' . MODULE . '\ctrl\\'. $className . 'Ctrl';
