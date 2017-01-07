@@ -1,5 +1,6 @@
 <?php
 namespace app\ctrl;
+use core\lib\Config;
 use core\lib\Model;
 use core\yodiy;
 
@@ -28,5 +29,10 @@ class IndexCtrl extends yodiy
         $data = 'Hi yoDiy';
         $this->assign('data' , $data);
         $this->display('index.yodiy.php');
+    }
+
+    public function conf()
+    {
+        p(Config::get('CTRL' , 'route'));
     }
 }
