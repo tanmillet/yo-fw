@@ -18,8 +18,15 @@ define('MODULE' , 'app');
 
 define('DEBUG' , true);
 
+include 'vendor/autoload.php';
+
+$whoops = new \Whoops\Run();
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+$whoops->register();
+
 (DEBUG) ? ini_set('display_error' ,  'On') : ini_set('display_error' ,  'Off') ;
 
+dump($_SERVER);
 include CORE. '/com/function.php';
 
 include CORE. '/yodiy.php';
