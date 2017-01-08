@@ -7,7 +7,13 @@
  */
 
 return [
-    'DSN' => 'mysql:host=localhost;dbname=yodiy',
-    'USERNAME' => 'root',
-    'PASSWORD' => '',
+//    'DSN' => 'mysql:host=localhost;dbname=yodiy',
+//    'USERNAME' => 'root',
+//    'PASSWORD' => '',
+    'database_type' => 'mysql',
+    'database_name' => 'yodiy',
+    'server' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'charset' => 'utf8'
 ];
