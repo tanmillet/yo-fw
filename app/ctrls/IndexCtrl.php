@@ -33,7 +33,7 @@ class IndexCtrl extends yodiy
     {
         $model = new MUser();
         $data = [
-            'name' => post('username', 'dename', 'string'),
+            'name' => post('username', 'default', 'string'),
             'age' => post('age', 0, 'int'),
             'created_at' => date('Y-m-d H:i:s', time()),
         ];
