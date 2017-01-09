@@ -59,14 +59,59 @@ class IndexCtrl extends yodiy
     {
         $user = new MUser();
         $data = [
-            'username' => post('username', 'dename', 'string'),
-            'username' => post('age', 18, 'int')
+            'name' => post('username', 'dename', 'string'),
+            'age' => post('age', 18, 'int'),
+            'updated_at' => date('Y-m-d H:i:s', time())
         ];
         $where = [
             'id' => post('id', 0, 'int')
         ];
+
+        //判断是否有数据
+        $u = $user->selOne('*', $where);
+        if (is_bool($u) && $u === false) {
+            echo json_encode([
+                'status' => false,
+                'message' => '操作失败！不存在此用户！'
+            ]);
+            exit(400);
+        }
         $rst = $user->upOne($data, $where);
 
+        echo ($rst)
+            ?
+            json_encode([
+                'status' => true,
+                'message' => '操作成功！'
+            ])
+            :
+            json_encode([
+                'status' => false,
+                'message' => '操作失败！'
+            ]);
+    }
+
+    /**
+     * @author: promise tan
+     */
+    public function delOne()
+    {
+        $user = new MUser();
+        $where = [
+            'id' => get('id', 0, 'int')
+        ];
+
+        //判断是否有数据
+        $u = $user->selOne('*', $where);
+        if (is_bool($u) && $u === false) {
+            echo json_encode([
+                'status' => false,
+                'message' => '操作失败！不存在此用户！'
+            ]);
+            exit(400);
+        }
+
+        $rst = $user->delOne($where);
         echo ($rst)
             ?
             json_encode([

@@ -43,7 +43,7 @@ if (!function_exists('get')) {
                     return is_numeric($_GET[$name]) ? $_GET[$name] : 0;
                     break;
                 case 'string':
-                    return is_string($_GET[$name]) && is_null($_GET[$name]) ? $_GET[$name] : '';
+                    return is_string($_GET[$name]) && !is_null($_GET[$name]) ? $_GET[$name] : '';
                 default :
                     return $_GET[$name];
                     break;

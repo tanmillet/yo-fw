@@ -68,6 +68,17 @@ class MUser extends MBase
      */
     public function delOne($where)
     {
-        $this->delete($this->table, $where);
+        return $this->delete($this->table, $where);
+    }
+
+    /**
+     * @author: promise tan
+     * @param $columns
+     * @param $where
+     * @return bool|mixed
+     */
+    public function selOne($columns, $where)
+    {
+        return $this->get($this->table, $columns, $where);
     }
 }
