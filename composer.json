@@ -11,7 +11,8 @@
     "filp/whoops": "*",
     "symfony/var-dumper": "*",
     "catfan/medoo": "*",
-    "twig/twig": "~1.0"
+    "twig/twig": "~1.0",
+    "illuminate/support" : "^5.3"
   },
   "repositories": {
     "packagist": {

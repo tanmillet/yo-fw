@@ -124,4 +124,12 @@ class IndexCtrl extends yodiy
                 'message' => '操作失败！'
             ]);
     }
+
+    /**
+     * @author: promise tan
+     */
+    public function collectView()
+    {
+        dump(collect([1,2,3,4])->all());
+    }
 }
