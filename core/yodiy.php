@@ -93,8 +93,13 @@ class yodiy{
     {
         $viewFile = APP . '/views/' . $file . '.yodiy.php';
         if(is_file($viewFile)){
-            extract($this->assigns);
-            include  $viewFile;
+            // extract($this->assigns);
+            // include  $viewFile;
+            $loader = new \Twig_Loader_Filesystem(APP . '/views');
+            $twig = new \Twig_Environment($loader, array(
+                'cache' => YODIY . '/cache',
+            ));
+            echo $twig->render($file . '.yodiy.php' , $this->assigns);
         } else {
             throw new \Exception('no found such view file path:' . $viewFile);
         }

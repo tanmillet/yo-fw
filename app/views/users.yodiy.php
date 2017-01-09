@@ -9,16 +9,12 @@
 </head>
 <body>
 <h1>用户列表</h1>
-
-<?php
-if (isset($users) && !empty($users)) {
-    foreach ($users as $user) {
-        echo '用户名称：' . $user['name'], '<br/>';
-        echo '用户年龄：' . $user['age'], '<br/>';
-        echo '------------------------------------------', '<br/>';
-    }
-}
-?>
+<ul>
+    {% for user in users %}
+        <li>用户名称：{{ user.name }}</li>
+        <li>用户年龄：{{ user.age }}</li>
+    {% endfor %}
+</ul>
 </body>
 </html>
 
