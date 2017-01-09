@@ -9,11 +9,28 @@
 namespace core\lib;
 
 
+/**
+ * Class Config
+ * Author: promise tan
+ * @package core\lib
+ */
 class Config
 {
 
+    /**
+     * author: promise tan
+     * Date: ${DATE}
+     * @var array
+     */
     static public $confs = [];
 
+    /**
+     * @author: promise tan
+     * @param $name
+     * @param $file
+     * @return mixed
+     * @throws \Exception
+     */
     static public function get($name , $file){
         if(isset(self::$confs[$file])){
             return self::$confs[$file][$name];
@@ -33,6 +50,12 @@ class Config
         }
     }
 
+    /**
+     * @author: promise tan
+     * @param $file
+     * @return mixed
+     * @throws \Exception
+     */
     static public function all($file){
         if(isset(self::$confs[$file])){
             return self::$confs[$file];

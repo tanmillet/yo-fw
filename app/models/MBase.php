@@ -11,6 +11,11 @@ namespace app\models;
 
 use core\lib\Model;
 
+/**
+ * Class MBase
+ * Author: promise tan
+ * @package app\models
+ */
 class MBase extends Model
 {
 

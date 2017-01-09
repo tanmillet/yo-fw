@@ -8,6 +8,10 @@
 
 if (!function_exists('p')) {
 
+    /**
+     * @author: promise tan
+     * @param $params
+     */
     function p($params)
     {
         var_dump($params);
@@ -15,6 +19,13 @@ if (!function_exists('p')) {
 }
 
 if (!function_exists('post')) {
+    /**
+     * @author: promise tan
+     * @param $name
+     * @param $default
+     * @param $filter
+     * @return int|string
+     */
     function post($name, $default, $filter)
     {
         if (isset($_POST[$name]) || !empty($_POST[$name])) {
@@ -35,6 +46,13 @@ if (!function_exists('post')) {
 }
 
 if (!function_exists('get')) {
+    /**
+     * @author: promise tan
+     * @param $name
+     * @param $default
+     * @param $filter
+     * @return int|string
+     */
     function get($name, $default, $filter)
     {
         if (isset($_GET[$name]) || empty($_GET[$name])) {

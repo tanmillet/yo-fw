@@ -8,13 +8,30 @@
 
 namespace core\lib;
 
-
+/**
+ * Class Route
+ * Author: promise tan
+ * @package core\lib
+ */
 class Route
 {
-
+    /**
+     * author: promise tan
+     * Date: ${DATE}
+     * @var string
+     */
     public $ctrl = 'index';
+    /**
+     * author: promise tan
+     * Date: ${DATE}
+     * @var string
+     */
     public $action = 'index';
 
+    /**
+     * @author: promise tan
+     * Route constructor.
+     */
     public function __construct()
     {
         if(isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/'){
