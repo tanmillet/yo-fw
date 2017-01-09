@@ -8,7 +8,7 @@
         "filp/whoops": "*",
        "symfony/var-dumper":"*",
       "catfan/medoo":"*",
-      "twig/twig":"*"
+        "twig/twig": "~1.0"
     },
   "repositories": {
     "packagist": {
